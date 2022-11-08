@@ -51,7 +51,7 @@ async function buildHTML() {
     streamRead.on('end', () => {
       data = data.split(/{{|}}/g);
       for (let file of files) {
-        if (path.extname(file.name) === '.html' || !file.isDirectory()) {
+        if (path.extname(file.name) === '.html') {
           const fileName = file.name.slice(
             0,
             file.name.length - path.extname(file.name).length
